@@ -1,0 +1,15 @@
+#Sat Jun 22 23:15:39 IST 2024
+org.eclipse.core.runtime=2
+org.eclipse.platform=4.32.0.v20240601-0610
+
+
+try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection(  "jdbc:mysql://localhost:3306/web_app_demo_3","root","5073");  
+			Statement stmt=con.createStatement(); 
+			stmt.executeUpdate("DELETE FROM register WHERE emailid='"+email+"'");
+			con.close();
+		} catch (Exception e) {
+			
+			System.out.println(e);
+		}
